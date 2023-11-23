@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./src/assets/image/favicon.png">
+  <link rel="stylesheet" href="./src/assets/css/main.css">
+  <link rel="stylesheet" href="./src/assets/font/font.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《CSS揭秘》</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+<script>
+  function setRem() {
+    var ui_w = 780;
+    // 获取屏幕的宽度
+    let clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+    // 通过js动态改变html根节点字体大小
+    let html_ = document.getElementsByTagName('html')[0];
+    let rootFontSize = (clientWidth / ui_w) * 10;
+    html_.style.fontSize = rootFontSize < 10 ? 10 : rootFontSize + 'px';
+  }
+  // window.onresize 浏览器被重置大小执行事件
+  window.onresize = setRem;
+</script>
+
+</html>
