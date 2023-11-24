@@ -1,29 +1,10 @@
 <template>
   <div class="header">
-    <!-- <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="背景与边框" name="background-border"
-        >背景与边框</el-tab-pane
-      >
-      <el-tab-pane label="形状" name="shape">形状</el-tab-pane>
-      <el-tab-pane label="视觉效果" name="visual-effect">视觉效果</el-tab-pane>
-      <el-tab-pane label="字体排印" name="font-typography"
-        >字体排印</el-tab-pane
-      >
-      <el-tab-pane label="用户体验" name="user-experience"
-        >用户体验</el-tab-pane
-      >
-      <el-tab-pane label="结构与布局" name="structure-layout"
-        >结构与布局</el-tab-pane
-      >
-      <el-tab-pane label="过渡与动画" name="transitions-animations"
-        >过渡与动画</el-tab-pane
-      >
-    </el-tabs> -->
     <div class="bookIcon">
       <i class="iconfont icon-book" @click="backToCover"></i>
     </div>
     <div class="menu" id="menu">
-      <div>背景与边框</div>
+      <div class="activeMenu">背景与边框</div>
       <div>形状</div>
       <div>视觉效果</div>
       <div>字体排印</div>
@@ -41,15 +22,12 @@ import { useRouter } from "vue-router";
 import { store } from "../store/store";
 
 export default {
-  components: {},
   mounted() {
     this.changeActiveMenu();
   },
   setup() {
-    // 引入内容使用
     const router = useRouter();
 
-    // method
     /**
      * @description 路由跳转到首页
      */
@@ -71,9 +49,10 @@ export default {
         menus.forEach((menu) => {
           menu.classList.remove("activeMenu");
         });
+        // 添加选中样式
         e.target.classList.add("activeMenu");
+        // 设置当前展示类别
         store.chooseComName(e.target.index);
-        console.log("store.comName", store.comName);
       });
     };
     return {

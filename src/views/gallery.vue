@@ -1,34 +1,38 @@
 <template>
   <div class="gallery">
-    <MenusVue />
+    <!-- 头部菜单 -->
+    <Menus />
+    <!-- 卡片栏 -->
     <div class="main">
-      <transition mode="out-in">
-        <component :is="comName"></component>
-      </transition>
+      <router-view>
+        <transition name="gallery" mode="out-in">
+          <component :is="comName" />
+        </transition>
+      </router-view>
     </div>
   </div>
 </template>
 <script>
-import MenusVue from "../components/menus.vue";
-import backgroundBorderVue from "../components/background-border.vue";
-import shapeVue from "../components/shape.vue";
-import visualEffectVue from "../components/visual-effect.vue";
-import fontTypographyVue from "../components/font-typography.vue";
-import userExperienceVue from "../components/user-experience.vue";
-import structureLayoutVue from "../components/structure-layout.vue";
-import transitionsAnimationsVue from "../components/transitions-animations.vue";
+import Menus from "../components/menus.vue";
+import backgroundBorder from "../components/background-border/index.vue";
+import shape from "../components/shape/index.vue";
+import visualEffect from "../components/visual-effect/index.vue";
+import fontTypography from "../components/font-typography/index.vue";
+import userExperience from "../components/user-experience/index.vue";
+import structureLayout from "../components/structure-layout/index.vue";
+import transitionsAnimations from "../components/transitions-animations/index.vue";
 import { store } from "../store/store.js";
 import { computed } from "vue";
 export default {
   components: {
-    MenusVue,
-    backgroundBorderVue,
-    shapeVue,
-    fontTypographyVue,
-    visualEffectVue,
-    userExperienceVue,
-    structureLayoutVue,
-    transitionsAnimationsVue,
+    Menus,
+    backgroundBorder,
+    shape,
+    fontTypography,
+    visualEffect,
+    userExperience,
+    structureLayout,
+    transitionsAnimations,
   },
   setup() {
     const comName = computed(() => {
@@ -41,9 +45,21 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .gallery {
   height: 100%;
   background-image: linear-gradient(80deg, #64b3f4 0%, #c2e59c 100%);
+}
+.main {
+  margin: 0 35px;
+}
+/* TAB切换动画 */
+.gallery-enter-active,
+.gallery-leave-active {
+  transition: all 0.5s linear;
+}
+.gallery-enter-from,
+.gallery-leave-to {
+  opacity: 0;
 }
 </style>

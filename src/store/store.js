@@ -1,16 +1,16 @@
 import { reactive } from "vue";
 const routerAdd = [
-	"backgroundBorderVue",
-	"shapeVue",
-	"visualEffectVue",
-	"fontTypographyVue",
-	"userExperienceVue",
-	"structureLayoutVue",
-	"transitionsAnimationsVue",
+	"backgroundBorder",
+	"shape",
+	"visualEffect",
+	"fontTypography",
+	"userExperience",
+	"structureLayout",
+	"transitionsAnimations",
 ];
 export const store = reactive({
 	count: 0,
-	comName: "",
+	comName: routerAdd[0],
     chooseComName(index){
         this.comName = routerAdd[index]
     }
