@@ -1,15 +1,31 @@
 <template>
-    <div class="card">
-      <div class="title">标题</div>
-      <div>效果展示</div>
-      <button>Copy</button>
-    </div>
+  <div class="card">
+    <div class="title">标题</div>
+    <slot></slot>
+    <footer>
+      <div class="btn" @click="clickCopy">Copy</div>
+    </footer>
+    <!-- 解决外边距合并 -->
+    <div style="height: 1px"></div>
+  </div>
 </template>
 <script>
-
+import { ElMessage } from "element-plus";
 export default {
   setup() {
-    return {};
+    const clickCopy = () => {
+      const text = document.getElementById("cssDetail").innerHTML;
+      if (text !== "") {
+        navigator.clipboard.writeText(text);
+        ElMessage({
+          message: "Coped",
+          type: "success",
+          duration: 1000,
+          center: true,
+        });
+      }
+    };
+    return { clickCopy };
   },
 };
 </script>

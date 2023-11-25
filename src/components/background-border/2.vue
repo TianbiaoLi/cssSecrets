@@ -1,6 +1,6 @@
 <template>
   <div></div>
-  <pre>
+  <pre id="cssDetail">
   background: yellowgreen;
   box-shadow: 0 0 0 10px #655,
               0 0 0 15px deeppink,

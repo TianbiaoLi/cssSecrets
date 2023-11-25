@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <card/>
+    <card><first /></card>
+    <card><second /></card>
+    <card><third /></card>
+    <card><first /></card>
     <!-- <div class="card">
       <first />
     </div>
@@ -18,14 +21,14 @@
 import card from "@/components/card.vue"
 import first from "./1.vue";
 import second from "./2.vue";
-import three from "./3.vue";
+import third from "./3.vue";
 
 export default {
   components: {
     card,
     first,
     second,
-    three,
+    third,
   },
   setup() {
     return {};

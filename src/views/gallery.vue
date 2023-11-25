@@ -4,11 +4,9 @@
     <Menus />
     <!-- 卡片栏 -->
     <div class="main">
-      <router-view>
-        <transition name="gallery" mode="out-in">
-          <component :is="comName" />
-        </transition>
-      </router-view>
+      <transition name="gallery" mode="out-in">
+        <component :is="comName" />
+      </transition>
     </div>
   </div>
 </template>
@@ -47,11 +45,11 @@ export default {
 
 <style lang="scss">
 .gallery {
-  height: 100%;
+  // height: 100%;
   background-image: linear-gradient(80deg, #64b3f4 0%, #c2e59c 100%);
 }
 .main {
-  margin: 0 35px;
+  margin: 1.25rem 2.1875rem 0;
 }
 /* TAB切换动画 */
 .gallery-enter-active,

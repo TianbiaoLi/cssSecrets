@@ -1,10 +1,10 @@
 <template>
 <div>半透明边框</div>
   <div id="main"></div>
-  <pre>
-  border: 10px solid hsla(0, 0%, 100%, 0.5);
-  background: white;
-  background-clip: padding-box;
+  <pre id="cssDetail">
+border: 10px solid hsla(0, 0%, 100%, 0.5);
+background: white;
+background-clip: padding-box;
 </pre
   >
 </template>
