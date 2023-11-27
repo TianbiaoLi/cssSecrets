@@ -2,22 +2,11 @@
   <div class="card">
     <div class="title">{{ title }}</div>
     <!-- 样式效果展示 -->
-    <div class="show">
-      <div id="mainBox"></div>
-      <pre id="htmlDetail">{{ htmlDetail }}</pre>
-      <pre id="cssDetail">{{ cssDetail }}</pre>
-      <pre id="sassDetail">{{ cssDetail }}</pre>
+    <div class="show" ref="showDom">
+      <slot />
     </div>
     <!-- 复制按钮 -->
     <footer>
-      <!-- <el-tooltip
-        class="box-item"
-        effect="dark"
-        content="Top Left prompts info"
-        placement="top-start"
-      >
-        <el-button>top-start</el-button>
-      </el-tooltip> -->
       <div class="btn" @click="copyClick">复制HTML</div>
       <div class="btn" @click="copyClick">复制CSS</div>
       <div class="btn" @click="copyClick">复制sass</div>
@@ -28,6 +17,7 @@
 </template>
 <script>
 import { ElMessage } from "element-plus";
+import { ref } from "vue";
 export default {
   props: ["title"],
   setup() {
@@ -39,18 +29,21 @@ border: 10px solid hsla(0, 0%, 100%, 0.5);
 background: white;
 background-clip: padding-box;
     `;
+    const showDom = ref(null);
     const copyClick = (e) => {
       let text = "";
       switch (e.target.innerHTML) {
         case "复制HTML":
-          text = document.getElementById("htmlDetail").innerHTML;
+          text = showDom.value.querySelector("#htmlDetail").innerHTML;
           console.log(text);
           break;
         case "复制CSS":
-          text = document.getElementById("cssDetail").innerHTML;
+          text = showDom.value.querySelector("#cssDetail").innerHTML;
+          console.log(text);
           break;
         case "复制sass":
-          text = document.getElementById("sassDetail").innerHTML;
+          text = showDom.value.querySelector("#sassDetail").innerHTML;
+          console.log(text);
           break;
         default:
           break;
@@ -65,7 +58,7 @@ background-clip: padding-box;
         });
       }
     };
-    return { htmlDetail, cssDetail, copyClick };
+    return { htmlDetail, cssDetail, copyClick, showDom };
   },
 };
 </script>
@@ -99,18 +92,10 @@ $cardWidth: calc(100% / 3 - $cardGap); //卡片宽度
 // 主体
 .show {
   margin: 1.25rem 0.625rem;
-}
-#mainBox {
-  height: 120px;
-  width: 120px;
-  border: 0.625rem solid rgba(255, 255, 255, 0.3);
-  background: no-repeat center / cover url("@/assets/image/bg.png");
-  background-clip: padding-box;
-}
-#htmlDetail,
-#cssDetail,
-#sassDetail {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 // 底部按钮
 $btnH: 1.875rem;

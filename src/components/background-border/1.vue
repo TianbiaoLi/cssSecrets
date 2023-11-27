@@ -7,14 +7,12 @@
 <script>
 export default {
   setup() {
-    const htmlDetail = `
-<div id="main"></div>
-    `;
-    const cssDetail = `
-border: 10px solid hsla(0, 0%, 100%, 0.5);
+    const htmlDetail = 
+`<div id="main"></div>`;
+    const cssDetail = 
+`border: 10px solid hsla(0, 0%, 100%, 0.5);
 background: white;
-background-clip: padding-box;
-    `;
+background-clip: padding-box;`;
     return { htmlDetail, cssDetail };
   },
 };
