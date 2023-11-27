@@ -45,8 +45,9 @@ export default {
 
 <style lang="scss">
 .gallery {
-  // height: 100%;
-  background-image: linear-gradient(80deg, #64b3f4 0%, #c2e59c 100%);
+  height: 100%;
+  // background-image: linear-gradient(80deg, #64b3f4 0%, #c2e59c 100%);
+  background-image: linear-gradient(80deg, #3498db 0%, #1abc9c 100%);
 }
 .main {
   margin: 1.25rem 2.1875rem 0;
@@ -54,7 +55,7 @@ export default {
 /* TAB切换动画 */
 .gallery-enter-active,
 .gallery-leave-active {
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 .gallery-enter-from,
 .gallery-leave-to {

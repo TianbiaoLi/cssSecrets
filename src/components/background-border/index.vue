@@ -1,20 +1,8 @@
 <template>
   <div class="container">
-    <card><first /></card>
-    <card><second /></card>
-    <card><third /></card>
-    <card><first /></card>
-    <!-- <div class="card">
-      <first />
-    </div>
-    <div class="card">
-      <second />
-    </div>
-    <div class="card">
-      <three />
-    </div>
-    <div class="card"></div>
-    <div class="card"></div> -->
+    <card title="半透明边框"></card>
+    <card title="多重边框"><second /></card>
+    <card title="背景定位"><third /></card>
   </div>
 </template>
 <script>
@@ -36,4 +24,9 @@ export default {
 };
 </script>
 <style lang="scss">
+.container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 </style>
