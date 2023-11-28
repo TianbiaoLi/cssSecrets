@@ -1,33 +1,35 @@
 <template>
-  <div id="main"></div>
-  <pre id="htmlDetail">{{ htmlDetail }}</pre>
+  <el-tooltip class="box-item" effect="light" placement="top-start">
+    <template #content>
+      outline可以省去计算扩展半径<br />
+      通过outline-offset控制与边缘的距离<br />
+      不一定贴合border-radius属性的圆角
+    </template>
+    <div class="bg">
+      <div id="main">多重边框<br />outline方案</div>
+    </div>
+  </el-tooltip>
+  <pre id="htmlDetail" v-html="htmlDetail"></pre>
   <pre id="cssDetail">{{ cssDetail }}</pre>
   <pre id="sassDetail">{{ cssDetail }}</pre>
 </template>
 <script>
 export default {
   setup() {
-    const htmlDetail = 
-`<div id="main"></div>`;
-    const cssDetail = 
-`background: yellowgreen;
-box-shadow: 0 0 0 10px #655,
-            0 0 0 15px deeppink,
-            0 2px 5px 15px rgba($color: 0, 0, 0, $alpha: 0.6);`;
+    const htmlDetail = '<div id="main"></div>';
+    const cssDetail = `background: black;
+outline: 2px dashed white;
+outline-offset: -15px;`;
     return { htmlDetail, cssDetail };
   },
 };
 </script>
 <style lang="scss" scoped>
+@import "@/assets/css/card";
 #main {
-  height: 120px;
-  width: 120px;
-  background: url("@/assets/image/bg.png") no-repeat bottom right #58a;
-  background-position: right 20px bottom 10px;
-}
-#htmlDetail,
-#cssDetail,
-#sassDetail {
-  display: none;
+  width: 12.5rem;
+  background: black;
+  outline: .125rem dashed white;
+  outline-offset: -0.9375rem;
 }
 </style>

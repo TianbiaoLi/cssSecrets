@@ -45,8 +45,7 @@ export default {
 
 <style lang="scss">
 .gallery {
-  // height: 100%;
-  // background-image: linear-gradient(80deg, #64b3f4 0%, #c2e59c 100%);
+  min-height: 100%;
   background-image: linear-gradient(80deg, #3498db 0%, #1abc9c 100%);
 }
 .main {

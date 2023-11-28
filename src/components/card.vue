@@ -6,7 +6,7 @@
       <slot />
     </div>
     <!-- 复制按钮 -->
-    <footer>
+    <footer name="footer">
       <div class="btn" @click="copyClick">复制HTML</div>
       <div class="btn" @click="copyClick">复制CSS</div>
       <div class="btn" @click="copyClick">复制sass</div>
