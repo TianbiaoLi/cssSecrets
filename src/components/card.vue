@@ -77,9 +77,12 @@ $cardWidth: calc(100% / 3 - $cardGap); //卡片宽度
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-}
-.card:nth-child(3n) {
-  margin-right: 0;
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 }
 // 标题
 .title {
@@ -118,6 +121,20 @@ footer {
         2;
       transition: all 0.5s;
     }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .card {
+    width: calc(100% / 2 - $cardGap);
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    width: calc(100% - $cardGap);
+    margin-right: 0;
   }
 }
 </style>

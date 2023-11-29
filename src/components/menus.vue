@@ -95,11 +95,9 @@ $headerHeight: 2.8125rem;
       transition: all 0.3s;
     }
   }
-  .icon-book {
-    color: #c2e59c;
-  }
+  .icon-book,
   .icon-fanhui {
-    color: #64b3f4;
+    color: #c2e59c;
   }
 }
 // 导航栏中间文字
