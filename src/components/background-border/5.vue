@@ -1,9 +1,10 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top-start">
     <template #content>
-      background-position允许执行距离任意角的偏移量<br />
-      默认以padding-box为准
-    </template>
+      background-origin改变默认对齐位置<br />
+      可选:content-box;padding-box;border-box<br />
+      可用于简化设置了padding值的css代码
+      </template>
     <div class="bg">
       <div id="main"></div>
     </div>
@@ -19,7 +20,7 @@ export default {
     const cssDetail = 
 `background: url("@/assets/image/bg-small.png") 
              no-repeat bottom right #58a;
-background-position: right 20px bottom 10px;`;
+background-origin: content-box;`;
     return { htmlDetail, cssDetail };
   },
 };
@@ -29,7 +30,8 @@ background-position: right 20px bottom 10px;`;
 
 #main {
   width: 12.5rem;
-  background: url("@/assets/image/bg-small.png") no-repeat bottom right rgb(117, 186, 231);
-  background-position: right 1.25rem bottom .625rem;
+  padding: .625rem;
+  background: url("@/assets/image/bg-small.png") no-repeat bottom right #58a;
+  background-origin: content-box;
 }
 </style>

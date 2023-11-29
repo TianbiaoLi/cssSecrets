@@ -1,8 +1,10 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top-start">
     <template #content>
-      box-shadow是层层叠加的,此时需要计算扩展半径<br />
-      属性值依次为:x偏;y偏;模糊半径;扩张半径;颜色
+      repeating-linear-gradient优点:<br />
+      (1)自动重复渐变<br />
+      (2)重复色块的长度直接在渐变轴度量<br />
+      <strong>(3)随意设置角度值</strong>
     </template>
     <div class="bg">
       <div id="main"></div>
@@ -15,21 +17,17 @@
 <script>
 export default {
   setup() {
-    const htmlDetail = '<div id="main"></div>';
-    const cssDetail = `background: yellowgreen;
-box-shadow: 0 0 0 10px #655,
-            0 0 0 15px deeppink,
-            0 2px 5px 15px rgba($color: 0, 0, 0, $alpha: 0.6);`;
+    const htmlDetail = `<div id="main"></div>`;
+    const cssDetail = `background: repeating-linear-gradient(60deg, #fb3,#fb3 15px,#58a 0,#58a 30px)`;
     return { htmlDetail, cssDetail };
   },
 };
 </script>
 <style lang="scss" scoped>
 @import "@/assets/css/card";
+
 #main {
-  background: yellowgreen;
-  box-shadow: 0 0 0 10px #655, 
-              0 0 0 15px deeppink,
-              0 2px 5px 15px rgba(0, 0, 0, 0.6);
+  width: 12.5rem;
+  background: repeating-linear-gradient(60deg, #fb3,#fb3 .9375rem,#58a 0,#58a 1.875rem)
 }
 </style>

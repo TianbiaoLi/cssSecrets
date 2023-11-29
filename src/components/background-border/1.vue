@@ -13,13 +13,11 @@
 export default {
   setup() {
     const htmlDetail = '<div id="main"></div>';
-    const cssDetail = `#main {
-  height: 120px;
-  width: 120px;
-  border: 10px solid rgba(255, 255, 255, 0.4);
-  background: white;
-  background-clip: padding-box;
-}`;
+    const cssDetail = `height: 120px;
+width: 120px;
+border: 10px solid rgba(255, 255, 255, 0.4);
+background: white;
+background-clip: padding-box;`;
     return { htmlDetail, cssDetail };
   },
 };

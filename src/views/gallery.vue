@@ -8,7 +8,7 @@
         <component :is="comName" />
       </transition>
     </div>
-    <el-backtop :right="50" :bottom="50" visibility-height="500" />
+    <el-backtop :right="50" :bottom="50" :visibility-height="500" />
   </div>
 </template>
 <script>

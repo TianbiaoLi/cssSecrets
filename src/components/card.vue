@@ -7,8 +7,9 @@
     </div>
     <!-- 复制按钮 -->
     <footer name="footer">
-      <div class="btn" @click="copyClick">复制HTML</div>
+      <!-- <div class="btn" @click="copyClick">复制HTML</div> -->
       <div class="btn" @click="copyClick">复制CSS</div>
+      <div style="color:#34495e">|</div>
       <div class="btn" @click="copyClick">复制sass</div>
     </footer>
     <!-- 解决外边距合并 -->
@@ -106,6 +107,7 @@ footer {
   display: flex;
   justify-content: space-between;
   .btn {
+    width: 40%;
     height: $btnH;
     line-height: $btnH - 0.3125rem;
     text-align: center;
@@ -123,6 +125,7 @@ footer {
     }
   }
 }
+// 页面宽度自适应
 @media screen and (min-width: 600px) and (max-width: 900px) {
   .card {
     width: calc(100% / 2 - $cardGap);
