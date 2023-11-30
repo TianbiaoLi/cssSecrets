@@ -15,6 +15,8 @@
     <card title="复杂背景 波点"><thirteen /></card>
     <card title="复杂背景 棋盘"><fourteen /></card>
     <card title="伪随机背景"><fifteen /></card>
+    <card title="连续的图像边框"><sixteen /></card>
+    <card title="蚂蚁行军效果"><seventeen /></card>
   </div>
 </template>
 <script>
@@ -34,6 +36,8 @@ import twelve from "./12.vue";
 import thirteen from "./13.vue";
 import fourteen from "./14.vue";
 import fifteen from "./15.vue";
+import sixteen from "./16.vue";
+import seventeen from "./17.vue";
 
 export default {
   components: {
@@ -52,7 +56,9 @@ export default {
     twelve,
     thirteen,
     fourteen,
-    fifteen
+    fifteen,
+    sixteen,
+    seventeen
   },
 };
 </script>
