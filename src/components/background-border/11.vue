@@ -42,6 +42,5 @@ background-image: repeating-linear-gradient(
     transparent 0,
     transparent 1.875rem
   );
-  // background: repeating-linear-gradient(60deg, #79b 0 15px,#58a 15px 30px)
 }
 </style>

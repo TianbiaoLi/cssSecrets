@@ -9,7 +9,7 @@
     <footer name="footer">
       <!-- <div class="btn" @click="copyClick">复制HTML</div> -->
       <div class="btn" @click="copyClick">复制CSS</div>
-      <div style="color:#34495e">|</div>
+      <div style="color: #34495e; user-select: none">|</div>
       <div class="btn" @click="copyClick">复制sass</div>
     </footer>
     <!-- 解决外边距合并 -->
@@ -101,6 +101,9 @@ $cardWidth: calc(100% / 3 - $cardGap); //卡片宽度
   justify-content: center;
   align-items: center;
 }
+.box-item {
+  user-select: none;
+}
 // 底部按钮
 $btnH: 1.875rem;
 footer {
@@ -115,13 +118,13 @@ footer {
     margin-bottom: 0.625rem;
     background: transparent;
     border-bottom: 3px solid;
-    border-image: linear-gradient(90deg, transparent 0%, #64b3f4 100%) 2 2 2 2;
+    border-image: linear-gradient(90deg, #64b3f4, transparent) 2 2 2 2;
     cursor: pointer;
     user-select: none;
     &:hover {
-      border-image: linear-gradient(-90deg, transparent 0%, #c2e59c 100%) 2 2 2
+      border-image: linear-gradient(90deg, transparent 50% , #c2e59c ) 2 2 2
         2;
-      transition: all 0.5s;
+      transition: all 0.66s;
     }
   }
 }

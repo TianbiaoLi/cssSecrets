@@ -11,6 +11,10 @@
     <card title="条纹背景 斜向条纹"><nine /></card>
     <card title="条纹背景 重复渐变"><ten /></card>
     <card title="条纹背景 同色系条纹"><eleven /></card>
+    <card title="复杂背景 网格"><twelve /></card>
+    <card title="复杂背景 波点"><thirteen /></card>
+    <card title="复杂背景 棋盘"><fourteen /></card>
+    <card title="伪随机背景"><fifteen /></card>
   </div>
 </template>
 <script>
@@ -26,6 +30,10 @@ import eight from "./8.vue";
 import nine from "./9.vue";
 import ten from "./10.vue";
 import eleven from "./11.vue";
+import twelve from "./12.vue";
+import thirteen from "./13.vue";
+import fourteen from "./14.vue";
+import fifteen from "./15.vue";
 
 export default {
   components: {
@@ -40,7 +48,11 @@ export default {
     eight,
     nine,
     ten,
-    eleven
+    eleven,
+    twelve,
+    thirteen,
+    fourteen,
+    fifteen
   },
 };
 </script>
