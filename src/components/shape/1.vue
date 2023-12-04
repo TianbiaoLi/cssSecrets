@@ -1,6 +1,6 @@
 <template>
-  <el-tooltip class="box-item" effect="light" placement="top-start" disabled>
-    <template #content></template>
+  <el-tooltip class="box-item" effect="light" placement="top-start">
+    <template #content>border-radius: x方向圆角/y方向圆角</template>
     <div class="bg">
       <div id="main"></div>
     </div>
@@ -13,11 +13,7 @@
 export default {
   setup() {
     const htmlDetail = '<div id="main"></div>';
-    const cssDetail = `height: 120px;
-width: 120px;
-border: 10px solid rgba(255, 255, 255, 0.4);
-background: white;
-background-clip: padding-box;`;
+    const cssDetail = `border-radius: 100% 0 0 100% / 50%;`;
     return { htmlDetail, cssDetail };
   },
 };

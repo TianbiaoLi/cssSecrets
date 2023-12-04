@@ -1,12 +1,12 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
     <template #content>
-      缺点在于需要两层标签<br />
-      且只适合正方形<br />
-      另外图片放大变形
+      clip-path直接指定裁切点<br />
+      能够适应非正方形图片<br />
+      <strong>且可以参与动画</strong><br />
     </template>
     <div class="bg">
-      <div id="main"><img src="@/assets/image/maple-bg.png"></div>
+      <div id="main"><img src="@/assets/image/maple-bg.png" /></div>
     </div>
   </el-tooltip>
   <pre id="htmlDetail" v-html="htmlDetail"></pre>
@@ -31,12 +31,15 @@ img{
 <style lang="scss" scoped>
 @import "@/assets/css/card";
 #main {
-  transform: rotate(45deg);
-  overflow: hidden;
   border: 1px dotted;
-  img{
-    max-width: 100%;
-    transform: rotate(-45deg) scale(1.42);
+  img {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: 1s clip-path;
+    &:hover {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
   }
 }
 </style>
