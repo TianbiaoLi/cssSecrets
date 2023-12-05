@@ -8,7 +8,7 @@
     </div>
   </el-tooltip>
   <pre id="htmlDetail" v-html="htmlDetail"></pre>
-  <pre id="cssDetail">{{ cssDetail }}</pre>
+  <pre id="cssDetail">{{cssDetail}}</pre>
   <pre id="sassDetail">{{ sassDetail }}</pre>
 </template>
 <script>
@@ -49,18 +49,18 @@ color: white;
 <style lang="scss" scoped>
 @import "@/assets/css/card";
 #main {
-	line-height: 7.5rem;
+  line-height: 7.5rem;
   position: relative;
-  padding: .5rem 1rem .35rem;
+  padding: 0.5rem 1rem 0.35rem;
   color: white;
-  &::before{
-    content: "";
-    position: absolute;
-    top: 0;right: 0;bottom: 0;left: 0;
-    z-index: -1;
-    background: #58a;
-    transform: perspective(.6rem) rotateX(4deg) scaleY(1.3);
-    transform-origin: bottom;
-  }
+}
+#main::before {
+  content: "";
+  position: absolute;
+  top: 0;right: 0;bottom: 0;left: 0;
+  z-index: -1;
+  background: #58a;
+  transform: perspective(0.6rem) rotateX(4deg) scaleY(1.3);
+  transform-origin: bottom;
 }
 </style>

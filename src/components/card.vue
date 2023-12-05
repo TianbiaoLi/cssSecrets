@@ -22,28 +22,20 @@ import { ref } from "vue";
 export default {
   props: ["title"],
   setup() {
-    const htmlDetail = `
-<div id="main"></div>
-    `;
-    const cssDetail = `
-border: 10px solid hsla(0, 0%, 100%, 0.5);
-background: white;
-background-clip: padding-box;
-    `;
     const showDom = ref(null);
     const copyClick = (e) => {
       let text = "";
       switch (e.target.innerHTML) {
         case "复制HTML":
-          text = showDom.value.querySelector("#htmlDetail").innerHTML;
+          text = showDom.value.querySelector("#htmlDetail").innerText;
           console.log(text);
           break;
         case "复制CSS":
-          text = showDom.value.querySelector("#cssDetail").innerHTML;
+          text = showDom.value.querySelector("#cssDetail").innerText;
           console.log(text);
           break;
         case "复制sass":
-          text = showDom.value.querySelector("#sassDetail").innerHTML;
+          text = showDom.value.querySelector("#sassDetail").innerText;
           console.log(text);
           break;
         default:
@@ -59,7 +51,7 @@ background-clip: padding-box;
         });
       }
     };
-    return { htmlDetail, cssDetail, copyClick, showDom };
+    return { copyClick, showDom };
   },
 };
 </script>
@@ -122,8 +114,7 @@ footer {
     cursor: pointer;
     user-select: none;
     &:hover {
-      border-image: linear-gradient(90deg, transparent 50% , #c2e59c ) 2 2 2
-        2;
+      border-image: linear-gradient(90deg, transparent 50%, #c2e59c) 2 2 2 2;
       transition: all 0.66s;
     }
   }

@@ -8,6 +8,7 @@
     <card title="切角效果 弧形"><six /></card>
     <card title="切角效果 裁切路径"><seven /></card>
     <card title="梯形效果"><eight /></card>
+    <card title="饼图"><nine /></card>
   </div>
 </template>
 <script>
@@ -20,6 +21,7 @@ import five from "./5.vue";
 import six from "./6.vue";
 import seven from "./7.vue";
 import eight from "./8.vue";
+import nine from "./9.vue";
 
 export default {
   components: {
@@ -31,7 +33,8 @@ export default {
     five,
     six,
     seven,
-    eight
+    eight,
+    nine
   },
 };
 </script>
