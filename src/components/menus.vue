@@ -1,8 +1,12 @@
 <template>
   <div class="header">
+    <!-- 左侧返回按钮 -->
     <div class="bookIcon">
-      <i class="iconfont icon-book" @click="backToCover"></i>
+      <a href="javascript:;" title="返回" style="text-decoration: none">
+        <i class="iconfont icon-book" @click="backToCover"></i>
+      </a>
     </div>
+    <!-- 中间菜单 -->
     <div class="menu" id="menu">
       <div class="activeMenu">背景与边框</div>
       <div>形状</div>
@@ -12,8 +16,11 @@
       <div>结构与布局</div>
       <div>过渡与动画</div>
     </div>
+    <!-- 右侧返回按钮 -->
     <div class="backIcon">
-      <i class="iconfont icon-fanhui" @click="backToCover"></i>
+      <a href="javascript:;" title="返回" style="text-decoration: none">
+        <i class="iconfont icon-fanhui" @click="backToCover"></i>
+      </a>
     </div>
   </div>
 </template>
@@ -32,6 +39,9 @@ export default {
      * @description 路由跳转到首页
      */
     const backToCover = () => {
+      // gallery回到第一栏
+      store.chooseComName(0);
+      // 回到首页
       router.push("/");
     };
 

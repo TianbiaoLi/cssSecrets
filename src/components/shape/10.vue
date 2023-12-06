@@ -1,13 +1,15 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
     <template #content>
-      为伪元素设置以左侧中间为锚点的旋转动画<br />
-      <strong>animation-delay为负值</strong
-      >时,不会延时,而是将从正值对应的动画处立即开始<br />
-      <strong>animation-play-state</strong>设置动画暂停,定格在第一帧
+      svg中<strong>viewBox</strong>值组成画幅的两个端点<br />
+      <strong>cx/cy</strong>为图形中心的x、y坐标<br />
+      <strong>stroke-dasharray</strong>设置了重复的宽度及间隔<br />
+      <strong>stroke-width</strong>以circle边缘向内外延伸
     </template>
     <div class="bg">
-      <div id="main">20%</div>
+      <svg viewBox="0 0 32 32">
+        <circle r="16" cx="16" cy="16" />
+      </svg>
     </div>
   </el-tooltip>
   <pre id="htmlDetail" v-html="htmlDetail"></pre>
@@ -18,37 +20,24 @@
 export default {
   setup() {
     const htmlDetail = '<div id="main"></div>';
-    const cssDetail = `@keyframes spin {
+    const cssDetail = `@keyframes fillup {
   to {
-    transform: rotate(0.5turn);
+    stroke-dasharray: 100 100;
   }
 }
-@keyframes bg {
-  50% {
-    background: #655;
-  }
-}
-#main {
-  position: relative;
-  line-height: 7.5rem;
-  border-radius: 50%;
+svg {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
   background: yellowgreen;
-  background-image: linear-gradient(to right, transparent 50%, #655 0);
-  color: transparent;
-  text-align: center;
-  animation-delay: -2s;
+  border-radius: 50%;
 }
-#main::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 50%;
-  width: 50%; height: 100%;
-  background-color: inherit;
-  border-radius: 0 100% 100% 0/50%;
-  transform-origin: left;
-  animation: spin 5s linear infinite,bg 10s step-end infinite;
-  animation-play-state: paused;
-  animation-delay: inherit;
+circle {
+  fill: yellowgreen;
+  stroke: #655;
+  stroke-width: 32;
+  stroke-dasharray: 30 100;
+  animation: fillup 5s linear infinite;
 }`;
     return { htmlDetail, cssDetail };
   },
@@ -56,37 +45,23 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/css/card";
-@keyframes spin {
+@keyframes fillup {
   to {
-    transform: rotate(0.5turn);
+    stroke-dasharray: 100 100;
   }
 }
-@keyframes bg {
-  50% {
-    background: #655;
-  }
-}
-#main {
-  position: relative;
-  line-height: 7.5rem;
-  border-radius: 50%;
+svg {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
   background: yellowgreen;
-  background-image: linear-gradient(to right, transparent 50%, #655 0);
-  color: transparent;
-  text-align: center;
+  border-radius: 50%;
 }
-#main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  background-color: inherit;
-  border-radius: 0 100% 100% 0/50%;
-  transform-origin: left;
-  animation: spin 5s linear infinite, bg 10s step-end infinite;
-  // animation-play-state: paused;
-  animation-delay: -2s;
+circle {
+  fill: yellowgreen;
+  stroke: #655;
+  stroke-width: 32;
+  stroke-dasharray: 30 100;
+  animation: fillup 5s linear infinite;
 }
 </style>
