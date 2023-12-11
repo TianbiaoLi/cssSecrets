@@ -10,6 +10,10 @@
     <card title="梯形效果"><eight /></card>
     <card title="饼图 动画方案"><nine /></card>
     <card title="饼图 SVG方案"><ten /></card>
+    <card title="染色效果 滤镜"><eleven /></card>
+    <card title="染色效果 混合"><twelve /></card>
+    <card title="毛玻璃"><thirteen /></card>
+    <card title="折角效果"><fourteen /></card>
   </div>
 </template>
 <script>
@@ -24,6 +28,10 @@ import seven from "./7.vue";
 import eight from "./8.vue";
 import nine from "./9.vue";
 import ten from "./10.vue";
+import eleven from "./11.vue";
+import twelve from "./12.vue";
+import thirteen from "./13.vue";
+import fourteen from "./14.vue";
 
 export default {
   components: {
@@ -37,7 +45,11 @@ export default {
     seven,
     eight,
     nine,
-    ten
+    ten,
+    eleven,
+    twelve,
+    thirteen,
+    fourteen
   },
 };
 </script>
