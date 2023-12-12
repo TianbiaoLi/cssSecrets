@@ -1,50 +1,62 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
-    <template #content>
-      使用径向渐变替代线性渐变
-    </template>
+    <template #content>SVG原生支持以任意路径排队的文字</template>
     <div class="bg">
-      <div id="main"></div>
+      <div id="main">
+        <svg viewBox="0 0 100 100">
+          <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+          <text>
+            <textPath xlink:href="#circle">
+              circular reasoning works because
+            </textPath>
+          </text>
+        </svg>
+      </div>
     </div>
   </el-tooltip>
-  <pre id="htmlDetail" v-html="htmlDetail"></pre>
+  <pre id="htmlDetail" v-text="htmlDetail"></pre>
   <pre id="cssDetail">{{ cssDetail }}</pre>
-  <pre id="sassDetail">{{ sassDetail }}</pre>
+  <pre id="sassDetail">{{ cssDetail }}</pre>
 </template>
 <script>
 export default {
   setup() {
-    const htmlDetail = '<div id="main"></div>';
-    const cssDetail = `radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
-            radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
-            radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left,
-            radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right;
-background-size: 50% 50%;
-background-repeat: no-repeat;`;
-    const sassDetail = `$bg: #58a;
-$tl: 15px;$tr: $tl;$bl: $tl;$br: $tl;
-#main {
-  background: radial-gradient(circle at top left, transparent $tl, #58a 0) top left,
-              radial-gradient(circle at top right, transparent $tr, #58a 0) top right,
-              radial-gradient(circle at bottom left, transparent $bl, #58a 0) bottom left,
-              radial-gradient(circle at bottom right, transparent $br, #58a 0) bottom right;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
+    const htmlDetail = `<div id="main">
+  <svg viewBox="0 0 100 100">
+    <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+    <text>
+      <textPath xlink:href="#circle">
+        circular reasoning works because
+      </textPath>
+    </text>
+  </svg>
+</div>`;
+    const cssDetail = `#main {
+  width: 8rem;
+  height: 8rem;
+  svg{
+    display: block;
+    overflow: visible;
+  }
+  path {
+    fill: none;
+  }
 }`;
-    return { htmlDetail, cssDetail, sassDetail };
+    return { htmlDetail, cssDetail };
   },
 };
 </script>
 <style lang="scss" scoped>
 @import "@/assets/css/card";
-$bg: #58a;
-$tl: 15px;$tr: $tl;$bl: $tl;$br: $tl;
 #main {
-  background: radial-gradient(circle at top left, transparent $tl, #58a 0) top left,
-    radial-gradient(circle at top right, transparent $tr, #58a 0) top right,
-    radial-gradient(circle at bottom left, transparent $bl, #58a 0) bottom left,
-    radial-gradient(circle at bottom right, transparent $br, #58a 0) bottom right;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
+  width: 8rem;
+  height: 8rem;
+  svg {
+    display: block;
+    overflow: visible;
+  }
+  path {
+    fill: none;
+  }
 }
 </style>

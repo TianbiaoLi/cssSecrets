@@ -56,7 +56,8 @@ dd + dd::before{
 @import "@/assets/css/card";
 #main {
   width: 15rem;
-  border: 1px solid;
+  height: 10rem;
+  border: .0625rem solid;
   dt,
   dd {
     display: inline;
