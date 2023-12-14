@@ -1,19 +1,25 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
     <template #content>
-      通过设置渐变背景,实现斑马条纹<br />
-      调整background-origin,保证背景与内容在同一区域范围<br />
+      两层渐变背景<br />
+      background-attachment设置图像位置,第一层固定到顶部,第二层随区块滚动<br />
+      初始第一层覆盖度二层,第二层随滚动会逐步显现出来
     </template>
     <div class="bg">
       <div id="main">
-<pre>
-while (true) {
-  let d = new Date();
-    if (d.getTime() == 1) {
-      alert("First")
-  }
-}
-</pre>
+        <ul>
+          <li>QSC</li>
+          <li>ETRJN</li>
+          <li>EKTYKJ</li>
+          <li>NIOHWOER</li>
+          <li>QWRQW</li>
+          <li>HBWEG</li>
+          <li>GHWERGH</li>
+          <li>SVWFR</li>
+          <li>QSC</li>
+          <li>ETRJN</li>
+          <li>EKTYKJ</li>
+        </ul>
       </div>
     </div>
   </el-tooltip>
@@ -25,21 +31,39 @@ while (true) {
 export default {
   setup() {
     const htmlDetail = `<div id="main">
-  <pre>
-    while (true) {
-      let d = new Date();
-        if (d.getTime() == 1) {
-          alert("First")
-      }
-    }
-  </pre>
+  <ul>
+    <li>QSC</li>
+    <li>ETRJN</li>
+    <li>EKTYKJ</li>
+    <li>NIOHWOER</li>
+    <li>QWRQW</li>
+    <li>HBWEG</li>
+    <li>GHWERGH</li>
+    <li>SVWFR</li>
+    <li>QSC</li>
+    <li>ETRJN</li>
+    <li>EKTYKJ</li>
+  </ul>
 </div>`;
-    const cssDetail = `padding: 0.5rem;
-line-height: 1.5;
-background: #f39c12;
-background-size: auto 3rem;
-background-origin: content-box;
-background-image: linear-gradient(rgba(255,255,255, 0.3) 50%, transparent 0);`;
+    const cssDetail = `ul {
+  overflow: auto;
+  width: 10rem;
+  height: 8rem;
+  padding: 0.3rem 0.5rem;
+  border: 0.0625rem solid silver;
+  background: linear-gradient(#37bbb4 30%, transparent),
+    radial-gradient(at 50% 0, rgba(0, 0, 0, 0.2), transparent 70%),
+    linear-gradient(transparent 10%, #37bbb4),
+    radial-gradient(at 50% 100%, rgba(0, 0, 0, 0.2) 30%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 50px, 100% 15px, 100% 50px, 100% 15px;
+  background-position: top, top, bottom, bottom;
+  background-attachment: local, scroll, local, scroll;
+}
+// 去除滚动条
+ul::-webkit-scrollbar{
+  width: 0;
+}`;
     return { htmlDetail, cssDetail };
   },
 };
@@ -47,14 +71,24 @@ background-image: linear-gradient(rgba(255,255,255, 0.3) 50%, transparent 0);`;
 <style lang="scss" scoped>
 @import "@/assets/css/card";
 #main {
-  width: 15rem;
-  height: 10rem;
-  border: .0625rem solid;
-  padding: 0.5rem;
-  line-height: 1.5;
-  background: #f39c12;
-  background-size: auto 3rem;
-  background-origin: content-box;
-  background-image: linear-gradient(rgba(255,255,255, 0.3) 50%, transparent 0);
+  ul {
+    overflow: auto;
+    width: 10rem;
+    height: 8rem;
+    padding: 0.3rem 0.5rem;
+    border: 0.0625rem solid silver;
+    background: linear-gradient(#37bbb4 30%, transparent),
+      radial-gradient(at 50% 0, rgba(0, 0, 0, 0.2), transparent 70%),
+      linear-gradient(transparent 10%, #37bbb4),
+      radial-gradient(at 50% 100%, rgba(0, 0, 0, 0.2) 30%, transparent 70%);
+    background-repeat: no-repeat;
+    background-size: 100% 50px, 100% 15px, 100% 50px, 100% 15px;
+    background-position: top, top, bottom, bottom;
+    background-attachment: local, scroll, local, scroll;
+  }
+  // 去除滚动条
+  ul::-webkit-scrollbar {
+    width: 0;
+  }
 }
 </style>

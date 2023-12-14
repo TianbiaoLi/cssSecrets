@@ -2,7 +2,7 @@
   <div class="container">
     <card title="扩大可点击区域"><one /></card>
     <card title="自定义复选框"><two /></card>
-    <card title="通过模糊弱化背景"><three /></card>
+    <card title="滚动提示"><three /></card>
     <card title="自定义下划线"><four /></card>
     <card title="文字凸起效果"><five /></card>
     <card title="环形文字"><six /></card>
