@@ -3,9 +3,7 @@
     <card title="扩大可点击区域"><one /></card>
     <card title="自定义复选框"><two /></card>
     <card title="滚动提示"><three /></card>
-    <card title="自定义下划线"><four /></card>
-    <card title="文字凸起效果"><five /></card>
-    <card title="环形文字"><six /></card>
+    <card title="交互式图片对比"><four /></card>
   </div>
 </template>
 <script>
@@ -14,8 +12,6 @@ import one from "./1.vue";
 import two from "./2.vue";
 import three from "./3.vue";
 import four from "./4.vue";
-import five from "./5.vue";
-import six from "./6.vue";
 
 export default {
   components: {
@@ -24,8 +20,6 @@ export default {
     two,
     three,
     four,
-    five,
-    six
   },
 };
 </script>
