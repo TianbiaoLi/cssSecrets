@@ -2,8 +2,8 @@
   <div class="container">
     <card title="自适应内部元素"><one /></card>
     <card title="根据兄弟元素数量设置样式"><two /></card>
-    <card title="滚动提示"><three /></card>
-    <card title="交互式图片对比"><four /></card>
+    <card title="根据兄弟元素数量范围匹配元素"><three /></card>
+    <card title="满幅背景 定宽内容"><four /></card>
   </div>
 </template>
 <script>
