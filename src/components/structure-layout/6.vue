@@ -1,9 +1,7 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
     <template #content>
-      大区块main占据整个宽度<br />
-      区块内的内容content宽度固定<br />
-      通过<strong>calc()函数</strong>,使得main内部留给内容的宽度与实际内容宽度相等
+      使用Flexbox时,<strong>margin:auto</strong>在水平、垂直方向均将元素居中<br />
     </template>
     <div class="bg">
       <div id="main">
@@ -22,14 +20,17 @@ export default {
   <div class="content"></div>
 </div>`;
     const cssDetail = `#main {
-  width: 300px;
+  width: 100%;
   border: 1px solid;
-  padding: 1rem;
-  padding: 1rem calc(50% - 60px);
+  position: relative;
   .content{
-    width: 120px;
-    height: 100%;
+    width: 100px;
+    height: 50px;
     background-color: #333;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
   }
 }`;
     return { htmlDetail, cssDetail };
@@ -44,12 +45,12 @@ export default {
 #main {
   width: 100%;
   border: 1px solid;
-  padding: 1rem;
-  padding: 1rem calc(50% - 60px);
+  display: flex;
   .content{
-    width: 120px;
-    height: 100%;
+    width: 100px;
+    height: 50px;
     background-color: #333;
+    margin: auto;
   }
 }
 </style>
