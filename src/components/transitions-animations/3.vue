@@ -1,31 +1,15 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
     <template #content>
-      匹配包含2~6个元素的列表的所有项<br />
+      <strong>animation-direction</strong>设置了动画反转<br />
+      reverse:反转每一个循环周期<br />
+      alternate:反转偶数周期<br />
+      alternate-reverse:反转奇数周期<br />
+      反转后,<strong>动画次数要翻倍</strong>,因为之前的两个动画现在合并为一个
     </template>
     <div class="bg">
       <div id="main">
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-        </ul>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-        </ul>
+        <span>文字文字文字</span>
       </div>
     </div>
   </el-tooltip>
@@ -37,31 +21,15 @@
 export default {
   setup() {
     const htmlDetail = `<div id="main">
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-  </ul>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-  </ul>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-  </ul>
+  <span>文字文字文字</span>
 </div>`;
-    const cssDetail = `li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
-li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
-  color: red;
+    const cssDetail = `#main {
+  span{
+    animation: .5s blink-smooth infinite alternate;
+  }
+}
+@keyframes blink-smooth {
+  to {color: transparent;}
 }`;
     return { htmlDetail, cssDetail };
   },
@@ -70,13 +38,11 @@ li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
 <style lang="scss" scoped>
 @import "@/assets/css/card";
 #main {
-  ul {
-    display: flex;
-    list-style-type: none;
+  span{
+    animation: .5s blink-smooth infinite alternate;
   }
-  li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
-  li:first-child:nth-last-child(n+2):nth-last-child(-n+6) ~ li {
-    color: red;
-  }
+}
+@keyframes blink-smooth {
+  to {color: transparent;}
 }
 </style>

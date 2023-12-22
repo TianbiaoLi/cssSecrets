@@ -2,7 +2,7 @@
   <div class="container">
     <card title="缓动效果"><one /></card>
     <card title="弹性过渡"><two /></card>
-    <card title="根据兄弟元素数量范围匹配元素"><three /></card>
+    <card title="闪烁效果"><three /></card>
     <card title="满幅背景 定宽内容"><four /></card>
     <card title="垂直居中 绝对定位"><five /></card>
     <card title="垂直居中 Flexbox"><six /></card>
