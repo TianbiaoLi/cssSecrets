@@ -3,8 +3,8 @@
     <card title="缓动效果"><one /></card>
     <card title="弹性过渡"><two /></card>
     <card title="闪烁效果"><three /></card>
-    <card title="满幅背景 定宽内容"><four /></card>
-    <card title="垂直居中 绝对定位"><five /></card>
+    <card title="打字动画"><four /></card>
+    <card title="状态平滑的动画"><five /></card>
     <card title="垂直居中 Flexbox"><six /></card>
     <card title="紧贴底部的页脚"><seven /></card>
   </div>
