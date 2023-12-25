@@ -41,8 +41,8 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/card";
 #main {
-  width: 10px;
-  height: 10px;
+  width: 1.25rem;
+  height: 1.25rem;
   background-color: orange;
   border-radius: 50%;
 }

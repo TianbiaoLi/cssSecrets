@@ -1,10 +1,12 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
     <template #content>
-      transform: translate(-50%,-50%)调回居中位置<br />
+      <strong>animation-s=play-state</strong>设置了动画暂停<br />
+      默认情况下暂停,聚焦时恢复动画
     </template>
     <div class="bg">
       <div id="main">
+        <div>鼠标放置启动动画</div>
         <div class="content"></div>
       </div>
     </div>
@@ -19,19 +21,21 @@ export default {
     const htmlDetail = `<div id="main">
   <div class="content"></div>
 </div>`;
-    const cssDetail = `#main {
-  width: 100%;
-  border: 1px solid;
-  position: relative;
-  .content{
-    width: 100px;
-    height: 50px;
-    background-color: #333;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    const cssDetail = `@keyframes panoramic {
+  to {
+    background-position: 100% 0;
   }
+}
+.content {
+  width: 6.25rem;
+  height: 3.125rem;
+  background: url("@/assets/image/bg-l.png");
+  background-size: auto 100%;
+  animation: panoramic 5s linear infinite alternate;
+  animation-play-state: paused;
+}
+.content:hover {
+  animation-play-state: running;
 }`;
     return { htmlDetail, cssDetail };
   },
@@ -39,21 +43,31 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/css/card";
-.bg{
+.bg {
   width: 18.75rem;
+}
+@keyframes panoramic {
+  to {
+    background-position: 100% 0;
+  }
 }
 #main {
   width: 100%;
   border: 1px solid;
-  position: relative;
-  .content{
-    width: 100px;
-    height: 50px;
-    background-color: #333;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .content {
+    width: 6.25rem;
+    height: 3.125rem;
+    background: url("@/assets/image/bg-l.png");
+    background-size: auto 100%;
+    animation: panoramic 5s linear infinite alternate;
+    animation-play-state: paused;
+  }
+  .content:hover {
+    animation-play-state: running;
   }
 }
 </style>

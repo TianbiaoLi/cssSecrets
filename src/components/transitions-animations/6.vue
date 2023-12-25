@@ -1,7 +1,7 @@
 <template>
   <el-tooltip class="box-item" effect="light" placement="top">
     <template #content>
-      使用Flexbox时,<strong>margin:auto</strong>在水平、垂直方向均将元素居中<br />
+      <strong>每个transform-origin都可以被两个translate模拟出来</strong><br />
     </template>
     <div class="bg">
       <div id="main">

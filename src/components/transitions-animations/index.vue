@@ -5,8 +5,7 @@
     <card title="闪烁效果"><three /></card>
     <card title="打字动画"><four /></card>
     <card title="状态平滑的动画"><five /></card>
-    <card title="垂直居中 Flexbox"><six /></card>
-    <card title="紧贴底部的页脚"><seven /></card>
+    <card title="环形路径平移"><six /></card>
   </div>
 </template>
 <script>
@@ -17,7 +16,6 @@ import three from "./3.vue";
 import four from "./4.vue";
 import five from "./5.vue";
 import six from "./6.vue";
-import seven from "./7.vue";
 
 export default {
   components: {
@@ -27,8 +25,7 @@ export default {
     three,
     four,
     five,
-    six,
-    seven
+    six
   },
 };
 </script>

@@ -8,6 +8,8 @@
     </template>
     <div class="bg">
       <div id="main">
+        <div>点击输入框聚焦</div>
+        <br />
         <input type="text" id="username" />
         <span class="callout">请输入用户名</span>
       </div>
